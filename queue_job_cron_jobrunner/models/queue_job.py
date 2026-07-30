@@ -114,7 +114,7 @@ class QueueJob(models.Model):
             #     break
 
     @api.model
-    def _cron_trigger(self, at=None):
+    def _cron_trigger(self, at=None):  # pylint: disable=invalid-name
         """Trigger the cron job runners
 
         Odoo will prevent concurrent cron jobs from running.

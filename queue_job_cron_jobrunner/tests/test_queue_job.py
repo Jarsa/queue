@@ -20,7 +20,7 @@ class TestQueueJob(TransactionCase):
         # Cleanup triggers just in case
         cls.env["ir.cron.trigger"].search([]).unlink()
 
-    def assertTriggerAt(self, at, message=None):
+    def assertTriggerAt(self, at, message=None):  # pylint: disable=invalid-name
         """Ensures a cron trigger is created at the given time"""
         return self.assertTrue(
             self.env["ir.cron.trigger"].search([("call_at", "=", at)]),
